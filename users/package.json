@@ -4,7 +4,7 @@
   "description": "A hello world MongoDB project with NodeJS",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "nodemon --exec \"mocha -R min\""
   },
   "author": "ryo112358",
   "license": "ISC",

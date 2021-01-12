@@ -18,4 +18,12 @@ describe('Read users from collection', () => {
         done();
       });
   })
+
+  it('find a user with a particular id', (done) => {
+    User.findOne({ _id: neal._id })
+      .then((user) => {
+        assert(user.name === 'Neal');
+        done();
+      });
+  });
 });
