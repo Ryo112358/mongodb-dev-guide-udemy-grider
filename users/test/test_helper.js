@@ -15,7 +15,7 @@ before((done) => {
     });
 });
 
-/* --- done() callback --- [part of mocha?]
+/* --- done() callback --- [part of mocha]
  * Before calling each describe() in test suite,
  * perform below steps and continue only when done with steps.
  */
