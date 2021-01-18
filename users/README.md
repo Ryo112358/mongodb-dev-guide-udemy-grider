@@ -14,5 +14,10 @@
 - Chai – Testing Assertion Library
 
 ## References
+
+### Docs
+1. MongoDB Update Operators – https://docs.mongodb.com/manual/reference/operator/update/
+
+### Articles
 1. Writing Tests w/ Mocha & Chai – https://itnext.io/how-to-make-tests-using-chai-and-mocha-e9db7d8d48bc
 1. Testing Deno Apps w/ Mocha – https://dev.to/craigmorten/testing-your-deno-apps-with-mocha-4f35

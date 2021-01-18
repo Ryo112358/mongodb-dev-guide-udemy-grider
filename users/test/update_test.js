@@ -4,10 +4,13 @@ const User = require('../src/user');
 
 describe('Updating records –', () => {
   let neal;
+  let armstrong;
 
   beforeEach((done) => {
-    neal = new User({ name: 'Neal'});
+    neal = new User({ name: 'Neal', postCount: 0 });
+    armstrong = new User({ name: 'Neal', postCount: 22 });
     neal.save()
+      .then(() => armstrong.save())
       .then(() => done());
   });
 
@@ -17,7 +20,7 @@ describe('Updating records –', () => {
     persist
       .then(() => User.find({}))
       .then((users) => {
-        assert(users.length === 1);
+        assert(users.length === 2);
         assert(users[0]['name'] === 'Neal Caffrey');
         done();
       });
@@ -29,7 +32,7 @@ describe('Updating records –', () => {
     neal.save()
       .then(() => User.find({}))
       .then((users) => {
-        assert(users.length === 1);
+        assert(users.length === 2);
         assert(users[0]['name'] === 'Neal Caffrey');
         done();
       });
@@ -62,6 +65,17 @@ describe('Updating records –', () => {
       User.findByIdAndUpdate(neal._id, { name: 'Neal Caffrey' }, { useFindAndModify: false }),
       done
     );
+  });
+
+  it('increment users post count by 1', (done) => {
+    User.updateMany({ name: 'Neal' }, { $inc: { postCount: 1 }})
+      .then(() => User.find({ name: 'Neal' }))
+      .then((users) => {
+        assert(users.length === 2);
+        assert(users[0]['postCount'] === 1);
+        assert(users[1]['postCount'] === 23);
+        done();
+      });
   });
 
 });
