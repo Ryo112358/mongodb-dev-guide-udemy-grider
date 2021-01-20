@@ -1,6 +1,6 @@
 const assert = require('assert'); // Included in Mocha
 
-const User = require('../src/user');
+const User = require('../src/model/user');
 
 describe('Creating records', () => {
   it('saves a user', () => {

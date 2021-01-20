@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-const User = require('../src/user');
+const User = require('../src/model/user');
 
 describe('Updating records –', () => {
   let neal;
