@@ -1,5 +1,7 @@
 const mongoose =  require('mongoose');
 
+const User = require('../src/model/user');
+
 /* before() and beforeEach() provided by Mocha, but how? */
 // This before() prevents test execution until connection to Mongo is successful
 before((done) => {
@@ -21,7 +23,10 @@ before((done) => {
  */
 beforeEach((done) => {
   mongoose.connection.collections.users.drop(() => {
+    User.find({})
+      .then((users) => console.log('--------- Test_helper ------------\n', users))
+      .then(() => done());
     // Drop collection is complete. Ready to run next test!
-    done();
+    // done();
   });
 });

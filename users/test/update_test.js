@@ -6,13 +6,7 @@ describe('Updating records –', () => {
   let neal;
   let armstrong;
 
-  beforeEach((done) => {
-    neal = new User({ name: 'Neal', postCount: 0 });
-    armstrong = new User({ name: 'Neal', postCount: 22 });
-    neal.save()
-      .then(() => armstrong.save())
-      .then(() => done());
-  });
+  let updateTestId = 1;
 
   // --- Helper ------------------------
   /* Performs same asserts as first it() test */
@@ -26,12 +20,28 @@ describe('Updating records –', () => {
       });
   }
 
+  beforeEach((done) => {
+    neal = new User({ name: 'Neal', postCount: 0 });
+    armstrong = new User({ name: 'Neal', postCount: 22 });
+    neal.save()
+      .then(() => armstrong.save())
+      .then(() => User.find({}))
+      .then((users) => console.log('----- UPDATE', updateTestId,'-----\n', users))
+      .then(() => {
+        ++updateTestId;
+        done();
+      });
+  });
+
   // --- Tests -------------------------
   it('instance type using set & save', (done) => {
     neal.set('name', 'Neal Caffrey'); // Changes 'name' in-memory; to be persisted
+
+    // Why is save() adding a new versioned document instead of overwriting previous???
     neal.save()
       .then(() => User.find({}))
       .then((users) => {
+        console.log(users);
         assert(users.length === 2);
         assert(users[0]['name'] === 'Neal Caffrey');
         done();
