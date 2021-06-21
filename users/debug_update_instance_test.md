@@ -1,4 +1,4 @@
---------- Test_helper ------------
+  --------- Test_helper ------------
  []
 --------- Test_helper ------------
  []
@@ -23,42 +23,58 @@
 ----- UPDATE 1 -----
  [
   {
-    _id: 601044832d16c235b866c3f3,
+    _id: 6011e807fe5dc22d004fec3b,
     name: 'Neal',
     posts: [ [Object] ],
     __v: 1
   },
   {
-    _id: 601044832d16c235b866c3f4,
+    _id: 6011e807fe5dc22d004fec3c,
     name: 'Neal',
     postCount: 0,
     posts: [],
     __v: 0
   },
   {
-    _id: 601044832d16c235b866c3f5,
+    _id: 6011e807fe5dc22d004fec3d,
     name: 'Neal',
     postCount: 22,
     posts: [],
     __v: 0
   }
 ]
+Before set: {
+  _id: 6011e807fe5dc22d004fec3c,
+  name: 'Neal',
+  postCount: 0,
+  posts: [],
+  __v: 0
+}
+
+After set: {
+  _id: 6011e807fe5dc22d004fec3c,
+  name: 'Neal Caffrey',
+  postCount: 0,
+  posts: [],
+  __v: 0
+}
+
 [
   {
-    _id: 601044832d16c235b866c3f3,
+    _id: 6011e807fe5dc22d004fec3b,
     name: 'Neal',
     posts: [ [Object] ],
     __v: 1
   },
   {
-    _id: 601044832d16c235b866c3f4,
+    _id: 6011e807fe5dc22d004fec3c,
     name: 'Neal Caffrey',
     postCount: 0,
     posts: [],
     __v: 0
   },
   {
-    _id: 601044832d16c235b866c3f5,
+    _id: 6011e807fe5dc22d004fec3d,
     name: 'Neal',
     postCount: 22,
     posts: [],
@@ -70,14 +86,14 @@
 ----- UPDATE 2 -----
  [
   {
-    _id: 601044862d16c235b866c3f7,
+    _id: 6011e809fe5dc22d004fec3f,
     name: 'Neal',
     postCount: 0,
     posts: [],
     __v: 0
   },
   {
-    _id: 601044862d16c235b866c3f8,
+    _id: 6011e809fe5dc22d004fec40,
     name: 'Neal',
     postCount: 22,
     posts: [],
@@ -89,14 +105,14 @@
 ----- UPDATE 3 -----
  [
   {
-    _id: 601044862d16c235b866c3f9,
+    _id: 6011e809fe5dc22d004fec41,
     name: 'Neal',
     postCount: 0,
     posts: [],
     __v: 0
   },
   {
-    _id: 601044862d16c235b866c3fa,
+    _id: 6011e809fe5dc22d004fec42,
     name: 'Neal',
     postCount: 22,
     posts: [],
@@ -108,14 +124,14 @@
 ----- UPDATE 4 -----
  [
   {
-    _id: 601044862d16c235b866c3fb,
+    _id: 6011e80afe5dc22d004fec43,
     name: 'Neal',
     postCount: 0,
     posts: [],
     __v: 0
   },
   {
-    _id: 601044862d16c235b866c3fc,
+    _id: 6011e80afe5dc22d004fec44,
     name: 'Neal',
     postCount: 22,
     posts: [],
@@ -127,14 +143,14 @@
 ----- UPDATE 5 -----
  [
   {
-    _id: 601044862d16c235b866c3fd,
+    _id: 6011e80afe5dc22d004fec45,
     name: 'Neal',
     postCount: 0,
     posts: [],
     __v: 0
   },
   {
-    _id: 601044862d16c235b866c3fe,
+    _id: 6011e80afe5dc22d004fec46,
     name: 'Neal',
     postCount: 22,
     posts: [],
@@ -146,14 +162,14 @@
 ----- UPDATE 6 -----
  [
   {
-    _id: 601044862d16c235b866c3ff,
+    _id: 6011e80afe5dc22d004fec47,
     name: 'Neal',
     postCount: 0,
     posts: [],
     __v: 0
   },
   {
-    _id: 601044862d16c235b866c400,
+    _id: 6011e80afe5dc22d004fec48,
     name: 'Neal',
     postCount: 22,
     posts: [],
@@ -175,3 +191,4 @@
      Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves. (C:\Users\Ryo\Documents\Playground\NodeCastle\GriderMongoDB\users\test\update_test.js)
       at listOnTimeout (internal/timers.js:554:17)
       at processTimers (internal/timers.js:497:7)
+

@@ -24,8 +24,10 @@ before((done) => {
 beforeEach((done) => {
   mongoose.connection.collections.users.drop(() => {
     User.find({})
-      .then((users) => console.log('--------- Test_helper ------------\n', users))
-      .then(() => done());
+      .then((users) => {
+        console.log('--------- Test_helper ------------\n', users);
+        done();
+      });
     // Drop collection is complete. Ready to run next test!
     // done();
   });
